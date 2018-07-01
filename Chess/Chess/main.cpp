@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
     Position pos = Position('c', 4);
     Box b1 = Box(pos);
     Chessboard cb = Chessboard();
+    Piece p = Piece("rook", true, Position("a1"));
     
     cout << bonjour << endl;
     cout << pos.getPositionName() << " - " << pos.getPositionValue() << endl;
@@ -32,7 +33,11 @@ int main(int argc, const char * argv[]) {
     cb.describe();
     cb.printEmpty();
     
+    cout << p.getShortDescription() << endl;
+    
     cout << cb.getPieceOnBox(Box(Position("h8")))->getDescrption() << endl;
+    
+    cb.print();
     
     return 0;
 }

@@ -17,7 +17,7 @@ bool Box::setColor(Position _pos)
 }
 
 
-Box::Box(Position _pos) : pos(_pos), color(setColor(pos))
+Box::Box(Position _pos) : pos(_pos), color(setColor(pos)), p(NULL)
 {}
 
 Position Box::getPosition()

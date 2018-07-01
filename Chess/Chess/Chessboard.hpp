@@ -25,6 +25,7 @@ public:
     
     void describe();
     void printEmpty();
+    void print();
     
     ~Chessboard();
     

@@ -25,6 +25,7 @@ public:
     bool isInGame();
     bool getColor();
     std::string getDescrption();
+    std::string getShortDescription();
     Box* getBoxPosition();
     
 private:

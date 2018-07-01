@@ -143,11 +143,53 @@ void Chessboard::printEmpty()
     cout << endl;
 }
 
+
+void Chessboard::print()
+{
+    int i, k;
+    
+    cout << " ";
+    for (k = 0; k < 8; ++k)
+        cout << " ___ ";
+    cout << endl;
+    
+    for (i = 7; i >= 0; --i)
+    {
+        cout << " ";
+        for (k = 0; k < 8; ++k)
+            cout << "|   |";
+        cout << endl;
+        
+        cout << i+1;
+        for (k = 0; k < 8; ++k)
+        {
+            Piece *p = getPieceOnBox(Box(Position(k + 'a', i+1)));
+            if (p != NULL)
+                cout << "|" << p->getShortDescription() <<   " |";
+            else
+                cout << "|   |";
+        }
+        cout << endl;
+        
+        cout << " ";
+        for (k = 0; k < 8; ++k)
+            cout << "|___|";
+        cout << endl;
+    }
+    
+    cout << " ";
+    for (k = 0; k < 8; ++k)
+        cout << "  " << (char)(k + 'a') << "  ";
+    cout << endl;
+}
+
 Piece* Chessboard::getPieceOnBox(Box b)
 {
     int val = b.getPosition().getPositionValue();
-    return boxes[b.getPosition().getPositionValue()].getPieceOnBox();
+    return boxes[val].getPieceOnBox();
 }
+
+
 
 Chessboard::~Chessboard()
 {
