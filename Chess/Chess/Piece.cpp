@@ -7,14 +7,17 @@
 //
 
 #include "Piece.hpp"
+#include "Box.hpp"
 
 using namespace std;
 
 
-Piece::Piece(std::string desc, bool _color) : DESCRIPTION((_color ? "white " : "black ") + desc),
-                                              color(_color)
+Piece::Piece(std::string type, bool _color, Position sp) :
+DESCRIPTION((_color ? "white " : "black ") + type),
+color(_color)
 {
     inGame = true;
+    boxPosition = new Box(sp);
 }
 
 bool Piece::getColor()
@@ -30,4 +33,9 @@ bool Piece::isInGame()
 string Piece::getDescrption()
 {
     return DESCRIPTION;
+}
+
+Box* Piece::getBoxPosition()
+{
+    return boxPosition;
 }

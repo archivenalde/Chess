@@ -13,18 +13,24 @@
 #include <vector>
 
 #include "Box.hpp"
+#include "Piece.hpp"
 
 class Chessboard {
 public:
     Chessboard();
     
-    Box getBoxByValue(int value);
-    Box getBoxByName(std::string name);
+    Box getBoxInArray(int index);
+    Box getBoxAtPosition(Position pos);
+    Piece* getPieceOnBox(Box b);
+    
+    void describe();
+    void printEmpty();
     
     ~Chessboard();
     
 private:
     std::vector<Box> boxes; //TODO : try to make it const and static
+    std::vector<Piece> pieces;
     
 };
 

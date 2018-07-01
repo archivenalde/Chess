@@ -12,20 +12,24 @@
 #include <iostream>
 
 #include "Position.hpp"
+#include "Piece.hpp"
 
 class Box {
 public:
     Box(Position pos);
-    Box(char col, int row);
     Position getPosition();
     bool getColor();
+    
+    void setPieceOnBox(Piece* p);
+    Piece* getPieceOnBox();
     
     bool setColor(Position pos); // Exclusively call in constructor
     
 private:
     const Position pos;
     const bool color; //TODO : Make an enum BLACK(0) WHITE(1)
-    
+    Piece* p;
+
 };
 
 #endif /* Box_hpp */

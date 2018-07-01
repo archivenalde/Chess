@@ -11,9 +11,13 @@
 
 #include <iostream>
 
+#include "Position.hpp"
+
+class Box;
+
 class Piece {
 public:
-    Piece(std::string descPiece, bool color);
+    Piece(std::string descPiece, bool color, Position startPos);
     void move();
     void eat();
     void beEaten();
@@ -21,11 +25,13 @@ public:
     bool isInGame();
     bool getColor();
     std::string getDescrption();
+    Box* getBoxPosition();
     
 private:
     bool inGame;
     bool color; //TODO : Make an enum BLACK(0) WHITE(1)
     const std::string DESCRIPTION;
+    Box* boxPosition;
 };
 
 #endif /* Piece_hpp */

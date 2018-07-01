@@ -20,11 +20,6 @@ bool Box::setColor(Position _pos)
 Box::Box(Position _pos) : pos(_pos), color(setColor(pos))
 {}
 
-Box::Box(char _col, int _row) : pos(_col, _row), color(setColor(pos))
-{}
-
-
-
 Position Box::getPosition()
 {
     return pos;
@@ -34,3 +29,15 @@ bool Box::getColor()
 {
     return color;
 }
+
+
+void Box::setPieceOnBox(Piece *_p)
+{
+    p = _p;
+}
+
+Piece* Box::getPieceOnBox()
+{
+    return p;
+}
+

@@ -15,13 +15,16 @@ class Position {
     
 public:
     Position(char row, int col);
-    Position(int value); // Set row and col by the value of a box array 
+    Position(std::string namePos);
+    Position(int value); // Set row and col by the value of a box array
     
     char getColumn();
     int getRow();
     
     std::string getPositionName();
     int getPositionValue();
+    static int getPositionValue(char row, int col);
+    static int getPositionValue(Position p);
     
 private:
     const char column;
